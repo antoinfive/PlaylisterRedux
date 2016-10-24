@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './styles/index.css';
 import { Provider } from 'react-redux'
-import configureStore from './store/configureStore.js'
-import PlaylistShow from './components/playlistShow'
+import { createStore } from 'redux'
 import rootReducer from './reducers/rootReducer'
 
-const store = configureStore()
-
+const store = createStore(rootReducer)
 ReactDOM.render(
   <Provider store={store}>
     <App />
